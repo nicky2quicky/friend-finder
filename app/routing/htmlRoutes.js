@@ -8,4 +8,8 @@ module.exports = function(app) {
     app.use(function(req,res){
         res.sendFile(path.join(__dirname + "/../public/home.html")); 
     });
+    // GET ROUTE TO CHARACTERS
+    app.get("/characters", function(req,res){
+        res.sendFile(path.join(__dirname + "/../public/characters.html"));
+    }); 
 }
