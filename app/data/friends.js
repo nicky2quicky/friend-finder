@@ -21,17 +21,17 @@ var friends = [{
  {
     name: "Ignignokt",
     photo: "https://vignette.wikia.nocookie.net/athfwiki/images/e/eb/Ignignokt.png/revision/latest?cb=20080316001408",
-    scores: ['4', '5', '2', '3','4','2','1','3','4','5']
+    scores: ['5', '2', '2', '2','3','5','3','2','3','2']
  },
  {
     name: "Err",
     photo: "https://vignette.wikia.nocookie.net/athfwiki/images/2/2a/Cartoons_ATHF-err.gif/revision/latest?cb=20080701182004",
-    scores: ['1', '2', '4', '5','4','2','3','3','5','5']
+    scores: ['4', '2', '2', '2','2','3','3','4','3','2']
  },
  {
     name: "Emory",
     photo: "https://vignette.wikia.nocookie.net/athfwiki/images/1/17/Emory.gif/revision/latest?cb=20080815005336",
-    scores: ['5', '5', '3', '5','4','1','3','1','5','5']
+    scores: ['4', '4', '2', '5','4','5','3','3','2','5']
  },
 {
  name: "Ogelthorpe",
@@ -41,7 +41,7 @@ var friends = [{
 {
  name: "Cybernetic Ghost of Christmas Past from the Future",
     photo: "https://vignette.wikia.nocookie.net/athfwiki/images/5/53/Cybernetic_Ghost.png/revision/latest?cb=20110214013837",
-    scores: ['5', '5', '3', '5','4','1','3','1','5','5']
+    scores: ['2', '1', '1', '3','4','5','3','4','5','5']
  },
 
 ];

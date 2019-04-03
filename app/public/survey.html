@@ -17,7 +17,20 @@
   </head>
 
 <body>
+
     <div class="container">
+        <div class="userInfo">
+          <h3 class="text-center"><strong>Survey Questions </strong><i class="fas fa-angle-double-down"></i></h3>
+    
+          <h3 class="text-center">User Information</h3>
+          <h4 class="text-center">Name (Required)</h4>
+          <input type="text" id="name" class="form-control" required>
+    
+          <h4 class="text-center">Photo Link</h4>
+          <input type="text" id="photo" class="form-control" required>
+        </div>
+
+    
 <h3 class="text-center">
     <strong>Question 1</strong>
   </h3>
@@ -166,7 +179,7 @@
   <h3 class="text-center">
     <strong>Question 10</strong>
   </h3>
-  <h4 class="text-center">Please select a suport power from below</h4>
+  <h4 class="text-center">Please select a super power from below</h4>
   <p class="text-center">
   <select class="chosen-select" id="q10">
     <option value=""></option>
@@ -177,6 +190,9 @@
     <option value="5">None</option>
   </select>
   </p>
+
+  <button type="submit" class="btn btn-success btn-lg btn-block" id="submit">Submit</button>
+
 
 </div>
 
@@ -258,10 +274,12 @@
 
         });
       } else {
-        alert("Please fill out all fields before submitting!");
+        alert("Please fill out all questions before submitting");
       }
     });
-  
+
+
+
 </script>
 
 </html>
