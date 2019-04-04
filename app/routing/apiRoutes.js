@@ -1,60 +1,55 @@
-// ===============================================================================
 // LOAD DATA
 
-
-var friendData = require("../data/friends");
-
-
-
-// ===============================================================================
+var friends = require("../app/data/friends.js");
 // ROUTING
-// ===============================================================================
-
 module.exports = function(app) {
-  
-  // ---------------------------------------------------------------------------
 
-  app.get("/api/survey", function(req, res) {
-    res.json(tableData);
+  app.get("/api/friends", function(req, res) {
+    return res.json(friends);
   });
 
+  // Post for the new user's point score
+  app.post("/api/friends", function(req, res) {
+    
+  // New User Data
+    var newUser = {
+      name: '',
+      picture: '',
+      points = []
+    };
 
-  app.get("/api/characters", function(req, res) {
-    res.json(tableData);
-  });
-
-  // API POST Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
-  // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a reservation request... this data is then sent to the server...
-  // Then the server saves the data to the tableData array)
-  // ---------------------------------------------------------------------------
-
-  app.post("/api/tables", function(req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body parsing middleware
-    if (tableData.length < 5) {
-      tableData.push(req.body);
-      res.json(true);
+  // New user's point array score, for loop push it the points into the array
+    var pointsArray = [];
+    for (var i = 0; i < req.body.scores.length; i++) {
+      pointsArray.push(parseInt(req.body.points[i]))
     }
-    else {
-      waitListData.push(req.body);
-      res.json(false);
+
+    newUser.points = pointArray;
+
+  // Aqua Teen Character Point Score
+    var charArray = [];
+    for (var i = 0; i < friends.length; i++){
+      var defaultScore = 0;
+      for (var j =0; j < newUser.points.length; j++){
+        defaultScore += Math.abs(newUser.points[j] - friends [i].points[j])
+      }
+      charArray.push(defaultScore);
     }
+
+    // Comparing the scores with the closest character match
+
+    var topScore = 0;
+    for (var i =1; i < charArray.length; i++){
+      if (charArray[i] <= charArray[topScore]){
+        topScore = i;
+      }
+    }
+
+    // Creating Variable for top match and pushing it back
+    var topMatch = friends[topScore];
+
+    res.json(topMatch);
+          friends.push(newUser)
   });
+  }
 
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
-
-  app.post("/api/clear", function(req, res) {
-    // Empty out the arrays of data
-    tableData = [];
-    waitListData =[];
-
-    res.json({ ok: true });
- 
-  });
-};
