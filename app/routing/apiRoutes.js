@@ -1,6 +1,7 @@
 // LOAD DATA
 
-var friends = require("../app/data/friends.js");
+var friends = require("../app/data/friends.js")
+
 // ROUTING
 module.exports = function(app) {
 
@@ -15,23 +16,23 @@ module.exports = function(app) {
     var newUser = {
       name: '',
       picture: '',
-      points = []
+      scores: []
     };
 
-  // New user's point array score, for loop push it the points into the array
-    var pointsArray = [];
+  // New user's point array score, for loop push it the scores into the array
+    var scoresArray = [];
     for (var i = 0; i < req.body.scores.length; i++) {
-      pointsArray.push(parseInt(req.body.points[i]))
+      scoresArray.push(parseInt(req.body.scores[i]))
     }
 
-    newUser.points = pointArray;
+    newUser.scores = scoresArray;
 
   // Aqua Teen Character Point Score
     var charArray = [];
     for (var i = 0; i < friends.length; i++){
       var defaultScore = 0;
-      for (var j =0; j < newUser.points.length; j++){
-        defaultScore += Math.abs(newUser.points[j] - friends [i].points[j])
+      for (var j =0; j < newUser.scores.length; j++){
+        defaultScore += Math.abs(newUser.scores[j] - friends [i].scores[j])
       }
       charArray.push(defaultScore);
     }
